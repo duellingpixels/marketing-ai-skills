@@ -20,3 +20,7 @@ Implementation details still require current official platform documentation; se
 Automated tests and sample commands must pass. Test a real WooCommerce export and a real Shopify export, manually check representative findings against source records, and validate the AI application workflow that the guide describes. Record remaining limits rather than calling an untested path supported.
 
 The current release is an offline preview. Real-store and AI application validation are pending. An export-based trial runs locally and does not require installing this checker on a live store.
+
+## Product labels in reports — 26 October 2026
+
+The readable report shows product names alongside exact SKUs in both the product table and product-specific findings. Names help the retailer recognise an item; SKUs remain the matching key. This is our presentation choice applying the data-definition and traceability principles above. Missing names are labelled “Name unavailable”; no name is invented.

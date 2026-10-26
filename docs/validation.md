@@ -23,3 +23,7 @@ A separate reviewer checked source, tests, instructions and examples against the
 - Measured marketing or revenue improvement.
 
 The release produces an evidence-led preparation report. It is not proof that a store or campaign is ready to launch.
+
+## Product name display — 26 October 2026
+
+The report now displays product name plus SKU in the product table and product-specific finding headings. Three added tests cover display, missing names and escaping source text. All 59 tests pass locally, and both documented platform examples were rerun successfully. Live-store validation remains pending.

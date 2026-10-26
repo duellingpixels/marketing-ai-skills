@@ -18,40 +18,40 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 ## Promoted products
 
-| SKU | Planned price | Available units | Contribution per unit | Contribution % |
-|---|---:|---:|---:|---:|
-| TEA-250 | 15.00 | 8 | 3.00 | 20.00 |
-| CUP-BLU | 20.00 | 0 | -1.00 | -5.00 |
-| CUP-RED | 25.00 | 40 | 10.00 | 40.00 |
-| BUNDLE-MISSING | 35.00 | Unverified | Unverified | Unverified |
+| Product name | SKU | Planned price | Available units | Contribution per unit | Contribution % |
+|---|---|---:|---:|---:|---:|
+| Tea 250g | TEA-250 | 15.00 | 8 | 3.00 | 20.00 |
+| Ceramic cup blue | CUP-BLU | 20.00 | 0 | -1.00 | -5.00 |
+| Ceramic cup red | CUP-RED | 25.00 | 40 | 10.00 | 40.00 |
+| Name unavailable | BUNDLE-MISSING | 35.00 | Unverified | Unverified | Unverified |
 
 ## Resolve before promotion
 
-### Product is not published to the online store [CUP-BLU]
+### Product is not published to the online store — Ceramic cup blue [CUP-BLU]
 
 **Evidence:** The export marks this product or its parent as unpublished/inactive.
 
 **Action:** Review product and parent publication before promoting it.
 
-### Promoted product is unavailable or has no available stock [CUP-BLU]
+### Promoted product is unavailable or has no available stock — Ceramic cup blue [CUP-BLU]
 
 **Evidence:** Available quantity 0; export in-stock flag False.
 
 **Action:** Check availability, replenishment and backorder policy before promoting this product.
 
-### Review Merchant Center product status [CUP-BLU]
+### Review Merchant Center product status — Ceramic cup blue [CUP-BLU]
 
 **Evidence:** Status disapproved; issue: Fictional price mismatch for AU Shopping.
 
 **Action:** Resolve the listed issue and confirm eligibility for the intended campaign destination.
 
-### Review the sale page response [CUP-BLU]
+### Review the sale page response — Ceramic cup blue [CUP-BLU]
 
 **Evidence:** https://example.com/products/ceramic-cup-blue: observed HTTP 404.
 
 **Action:** Check the final destination and update the campaign link where needed.
 
-### Promoted SKU is missing from the usable product export [BUNDLE-MISSING]
+### Promoted SKU is missing from the usable product export — Name unavailable [BUNDLE-MISSING]
 
 **Evidence:** No purchasable variant with exact SKU 'BUNDLE-MISSING' was imported.
 
@@ -60,31 +60,31 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 ## Review before launch
 
-### Current and planned prices differ [TEA-250]
+### Current and planned prices differ — Tea 250g [TEA-250]
 
 **Evidence:** Export price 20.00; planned price 15.00 AUD.
 
 **Action:** Confirm whether this is the intended pre-sale price or an offer that still needs configuring. Check at launch.
 
-### Stock is below the selected threshold [TEA-250]
+### Stock is below the selected threshold — Tea 250g [TEA-250]
 
 **Evidence:** 8 units available; low-stock threshold 10.
 
 **Action:** Review promotion volume and replenishment before increasing spend.
 
-### Stock is below your supplied campaign demand [TEA-250]
+### Stock is below your supplied campaign demand — Tea 250g [TEA-250]
 
 **Evidence:** 8 units available; your expected demand 30.
 
 **Action:** Adjust the campaign quantity or replenish. This check does not forecast demand.
 
-### Observed page price differs from the planned offer [TEA-250]
+### Observed page price differs from the planned offer — Tea 250g [TEA-250]
 
 **Evidence:** Observed 20.00; planned 15.00 AUD.
 
 **Action:** Confirm the schedule or discount code and repeat this check when the offer is live.
 
-### Offer retains less than its supplied unit costs [CUP-BLU]
+### Offer retains less than its supplied unit costs — Ceramic cup blue [CUP-BLU]
 
 **Evidence:** 20.00 - 15.00 - 6.00 = -1.00 AUD per unit.
 
@@ -93,25 +93,25 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 ## Checks still needing evidence
 
-### Verify the advertised page [CUP-RED]
+### Verify the advertised page — Ceramic cup red [CUP-RED]
 
 **Evidence:** No current, SKU-matched page observation was supplied.
 
 **Action:** Open the sale URL on mobile, record its final HTTP status, visible price and currency, and test the offer.
 
-### Verify offer contribution [BUNDLE-MISSING]
+### Verify offer contribution — Name unavailable [BUNDLE-MISSING]
 
 **Evidence:** Comparable unit\_cost, other\_unit\_cost and explicit cost\_basis\_confirmed=true are required.
 
 **Action:** Supply both costs on the same currency and tax basis as the price; use 0 only for a known zero cost.
 
-### Check Merchant Center eligibility if using Google Shopping [BUNDLE-MISSING]
+### Check Merchant Center eligibility if using Google Shopping — Name unavailable [BUNDLE-MISSING]
 
 **Evidence:** No current, SKU-matched Merchant Center observation was supplied.
 
 **Action:** Review the intended destination and country; record status and issue against this exact SKU.
 
-### Verify the advertised page [BUNDLE-MISSING]
+### Verify the advertised page — Name unavailable [BUNDLE-MISSING]
 
 **Evidence:** No current, SKU-matched page observation was supplied.
 
