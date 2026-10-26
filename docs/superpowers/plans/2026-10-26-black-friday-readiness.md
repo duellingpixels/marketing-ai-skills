@@ -52,7 +52,7 @@ Interfaces: `main(argv=None) -> int`, invoked by the portable skill script. Exit
 - [x] Write CLI tests for both platform fixtures, report outputs, invalid evidence, invalid numeric options and overwrite protection; observe failures before implementation.
 - [x] Implement CLI and publishable packaging; run examples and the full suite.
 - [x] Review fresh against the design; fix substantiated defects and rerun affected checks.
-- [ ] Commit original public files only, create the public GitHub repository, push and verify its remote contents and CI result.
+- [x] Commit original public files only, create the public GitHub repository, push and verify its remote contents and CI result.
 
 ## Execution notes
 
@@ -61,3 +61,4 @@ Interfaces: `main(argv=None) -> int`, invoked by the portable skill script. Exit
 - Export-first implementation uses no API credentials or network calls. Direct connectors and live-store validation remain follow-up work.
 - Regression tests cover review findings: parent-managed stock, backorders, variation type flags and overly precise monetary values.
 - Local verification: 56 tests pass; both documented platform commands generate reports.
+- Public repository created and initial implementation pushed to main. GitHub Actions run 40256178219 passed on Python 3.10 and 3.13, including both example commands.

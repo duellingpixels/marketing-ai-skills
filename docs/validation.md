@@ -7,7 +7,7 @@
 - Integration tests also run the legacy Shopify-header example.
 - Both platform examples return the expected five blocker findings, five review findings and six checks needing evidence. They use fictional products and observations.
 - The sample includes contribution of AUD 3.00 per unit for TEA-250 and AUD -1.00 for CUP-BLU from the supplied comparable costs.
-- Python source parses with Python 3.10 syntax. Runtime validation on Python 3.10 is delegated to GitHub Actions; see the workflow run for its actual result.
+- GitHub Actions passed on Python 3.10 and 3.13, including the full test suite and both platform example commands. [Initial passing workflow](https://github.com/duellingpixels/marketing-ai-skills/actions/runs/40256178219).
 - The reusable skill passes the skill frontmatter/naming validator.
 
 ## Independent review
