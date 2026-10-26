@@ -1,0 +1,5 @@
+ID,Type,SKU,Name,Published,Parent,Regular price,Sale price,Stock,In stock?
+101,simple,TEA-250,Tea 250g,1,,20.00,,8,1
+200,variable,CUP-PARENT,Ceramic cup,1,,,,,1
+201,variation,CUP-BLU,Ceramic cup blue,-1,id:200,30.00,20.00,0,0
+202,variation,CUP-RED,Ceramic cup red,1,id:200,30.00,25.00,40,1

@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-11-02",
+  "merchant": [
+    {"sku": "TEA-250", "status": "approved", "issue": "Fictional AU Shopping observation"},
+    {"sku": "CUP-BLU", "status": "disapproved", "issue": "Fictional price mismatch for AU Shopping"},
+    {"sku": "CUP-RED", "status": "approved", "issue": "Fictional AU Shopping observation"}
+  ],
+  "analytics": {
+    "period_start": "2026-10-26",
+    "period_end": "2026-11-01",
+    "purchase_events": 12,
+    "purchase_revenue": "420.00"
+  },
+  "pages": [
+    {"sku": "TEA-250", "url": "https://example.com/products/tea-250", "http_status": 200, "observed_price": "20.00", "currency": "AUD"},
+    {"sku": "CUP-BLU", "url": "https://example.com/products/ceramic-cup-blue", "http_status": 404, "observed_price": "20.00", "currency": "AUD"}
+  ]
+}

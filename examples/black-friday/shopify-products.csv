@@ -1,0 +1,5 @@
+URL handle,Title,SKU,Price,Published on online store,Status,Inventory quantity
+tea-250,Tea 250g,TEA-250,20.00,true,active,8
+ceramic-cup-blue,Ceramic cup blue,CUP-BLU,20.00,false,draft,0
+ceramic-cup-red,Ceramic cup red,CUP-RED,25.00,true,active,40
+ceramic-cup-red,,,,,,

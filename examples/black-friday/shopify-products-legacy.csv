@@ -1,0 +1,5 @@
+Handle,Title,Variant SKU,Variant Price,Published,Status,Variant Inventory Qty
+tea-250,Tea 250g,TEA-250,20.00,TRUE,active,8
+ceramic-cup-blue,Ceramic cup blue,CUP-BLU,20.00,FALSE,draft,0
+ceramic-cup-red,Ceramic cup red,CUP-RED,25.00,TRUE,active,40
+ceramic-cup-red,,,,,,

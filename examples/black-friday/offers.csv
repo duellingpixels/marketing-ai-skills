@@ -1,0 +1,5 @@
+sku,planned_price,currency,expected_units,unit_cost,other_unit_cost,cost_basis_confirmed
+TEA-250,15.00,AUD,30,10.00,2.00,true
+CUP-BLU,20.00,AUD,15,15.00,6.00,true
+CUP-RED,25.00,AUD,20,12.00,3.00,true
+BUNDLE-MISSING,35.00,AUD,10,,,

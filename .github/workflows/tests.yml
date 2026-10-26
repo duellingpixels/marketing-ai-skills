@@ -1,0 +1,32 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run behaviour tests
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+      - name: Run WooCommerce example
+        run: >-
+          python skills/black-friday-readiness/scripts/check.py
+          --platform woocommerce --products examples/black-friday/woocommerce-products.csv
+          --offers examples/black-friday/offers.csv --evidence examples/black-friday/evidence.json
+          --currency AUD --as-of 2026-11-02 --exported-on 2026-11-02
+          --campaign-start 2026-11-27 --campaign-end 2026-11-30 --output-dir reports/woo
+      - name: Run Shopify example
+        run: >-
+          python skills/black-friday-readiness/scripts/check.py
+          --platform shopify --products examples/black-friday/shopify-products.csv
+          --stock examples/black-friday/stock.csv --offers examples/black-friday/offers.csv
+          --evidence examples/black-friday/evidence.json --currency AUD --as-of 2026-11-02
+          --exported-on 2026-11-02 --campaign-start 2026-11-27 --campaign-end 2026-11-30
+          --output-dir reports/shopify
