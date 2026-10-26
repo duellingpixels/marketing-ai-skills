@@ -85,6 +85,10 @@ This is a reusable instruction file and local tool, not a hosted AI agent. The P
 - The default evidence age limit is seven days; adjust with `--max-evidence-age-days`. Default low-stock threshold is ten units; adjust with `--low-stock`. These are prompts to investigate, not demand predictions.
 - Do not share reports or store exports publicly unless you intend to. Use a local `data/` folder, which is ignored by Git, and keep customer/order exports outside this tool.
 
+## Methods and references
+
+See [the methodology and source notes](docs/research/black-friday-methodology.md) for professional ecommerce analytics and agent-evaluation principles applied during review. Book references support methods; current official documentation defines platform formats. Real WooCommerce and Shopify export trials and AI application workflow checks remain required before claiming a validated release.
+
 ## Development
 
 ```sh
