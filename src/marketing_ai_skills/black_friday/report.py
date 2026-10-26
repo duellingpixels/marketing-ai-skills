@@ -19,11 +19,28 @@ def render_markdown(report):
              '', 'Finding counts are individual checks, not numbers of affected products. Unknown checks may be inapplicable; record why when reviewing them.',
              '', '## Sources', '']
     lines.extend(f'- {safe(key)}: {safe(value)}' for key,value in report['sources'].items())
-    lines += ['', '## Promoted products', '', '| Product name | SKU | Planned price | Available units | Contribution per unit | Contribution % |',
-              '|---|---|---:|---:|---:|---:|']
+    lines += ['', '## Promoted products', '',
+              f'All prices and costs are per unit in {safe(report["currency"])}.', '',
+              '**Unit Margin = planned selling price − unit cost − other unit costs.**', '',
+              '**Value = Unit Margin ÷ planned selling price × 100.** This column shows the margin as a percentage of the selling price.', '',
+              'Unit cost is the cost of the product. Other unit costs are the additional selling costs you supplied, such as payment fees or packaging. '
+              'Unit Margin is what remains after those listed costs; business overheads and any costs you have not supplied still need covering.', '',
+              'Not supplied means a cost is missing. Not calculated means costs are missing or their currency and tax basis have not been confirmed comparable. '
+              'Value is also not calculated when the selling price is zero. A known zero cost is shown as 0.00.', '',
+              '| Product name | SKU | Planned selling price | Unit cost | Other unit costs | Unit Margin | Value | Available units |',
+              '|---|---|---:|---:|---:|---:|---:|---:|']
     for p in report['products']:
-        values=[product_names[p['sku']],p['sku'],p['planned_price'],p['stock'],p['contribution_per_unit'],p['contribution_percent']]
-        lines.append('| '+' | '.join(safe(v) if v is not None else 'Unverified' for v in values)+' |')
+        unit_cost = p.get('unit_cost')
+        other_cost = p.get('other_unit_cost')
+        margin = p['contribution_per_unit']
+        percent = p['contribution_percent']
+        values = [product_names[p['sku']], p['sku'], p['planned_price'],
+                  unit_cost if unit_cost is not None else 'Not supplied',
+                  other_cost if other_cost is not None else 'Not supplied',
+                  margin if margin is not None else 'Not calculated',
+                  percent + '%' if percent is not None else 'Not calculated',
+                  p['stock'] if p['stock'] is not None else 'Unverified']
+        lines.append('| '+' | '.join(safe(v) for v in values)+' |')
     for priority,title in [('blocker','Resolve before promotion'),('review','Review before launch'),('unknown','Checks still needing evidence')]:
         lines += ['',f'## {title}','']
         matching = [f for f in report['findings'] if f['priority']==priority]

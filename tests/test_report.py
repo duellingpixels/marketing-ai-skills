@@ -28,3 +28,29 @@ class ReportTests(unittest.TestCase):
         text=render_markdown(self.report('<b>Blue</b> | *Cup*\nName'))
         self.assertNotIn('<b>',text)
         self.assertIn('&lt;b&gt;Blue&lt;/b&gt; \\| \\*Cup\\* Name',text)
+
+    def test_margin_table_shows_cost_inputs_percentage_and_definitions(self):
+        report=self.report()
+        report['products'][0].update(unit_cost='15.00',other_unit_cost='2.00',cost_basis_confirmed=True)
+        text=render_markdown(report)
+        self.assertIn('| Unit cost | Other unit costs | Unit Margin | Value |',text)
+        self.assertIn('| 20.00 | 15.00 | 2.00 | 3.00 | 15.00% |',text)
+        self.assertIn('Unit Margin = planned selling price − unit cost − other unit costs.',text)
+        self.assertIn('Value = Unit Margin ÷ planned selling price × 100.',text)
+        self.assertIn('All prices and costs are per unit in AUD.',text)
+        self.assertNotIn('Contribution per unit',text)
+        self.assertNotIn('Contribution %',text)
+
+    def test_missing_costs_are_distinct_from_known_zero_cost(self):
+        report=self.report()
+        report['products'][0].update(unit_cost=None,other_unit_cost='0.00',
+                                    contribution_per_unit=None,contribution_percent=None)
+        text=render_markdown(report)
+        self.assertIn('| 20.00 | Not supplied | 0.00 | Not calculated | Not calculated |',text)
+
+    def test_zero_price_has_no_percentage(self):
+        report=self.report()
+        report['products'][0].update(planned_price='0.00',unit_cost='2.00',other_unit_cost='0.00',
+                                    contribution_per_unit='-2.00',contribution_percent=None)
+        text=render_markdown(report)
+        self.assertIn('| 0.00 | 2.00 | 0.00 | -2.00 | Not calculated |',text)

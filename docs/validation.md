@@ -27,3 +27,7 @@ The release produces an evidence-led preparation report. It is not proof that a 
 ## Product name display — 26 October 2026
 
 The report now displays product name plus SKU in the product table and product-specific finding headings. Three added tests cover display, missing names and escaping source text. All 59 tests pass locally, and both documented platform examples were rerun successfully. Live-store validation remains pending.
+
+## Cost visibility and margin labels — 26 October 2026
+
+The table shows Unit Margin and Value, with unit cost and other unit costs alongside the selling price. Value is formatted with a % sign. Definitions explain the calculation and excluded costs. Four added tests cover cost inputs, labels and definitions, missing versus known-zero costs, and a zero selling price. All 63 tests pass locally. Both platform examples were regenerated successfully.

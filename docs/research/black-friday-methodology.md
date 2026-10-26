@@ -24,3 +24,7 @@ The current release is an offline preview. Real-store and AI application validat
 ## Product labels in reports — 26 October 2026
 
 The readable report shows product names alongside exact SKUs in both the product table and product-specific findings. Names help the retailer recognise an item; SKUs remain the matching key. This is our presentation choice applying the data-definition and traceability principles above. Missing names are labelled “Name unavailable”; no name is invented.
+
+## Retail-facing margin definitions — 26 October 2026
+
+At the user's request, the table now labels the remaining amount as Unit Margin and its percentage as Value. It shows unit product cost and other supplied unit costs, defines both calculations and distinguishes missing costs from known zeros. This applies the financial-definition principle in Phillips' chapter 3: readers need the cost basis to interpret the amount. The exact labels and subtraction of other supplied selling costs are our defined report measure, not a claim that this is standard gross margin or final profit.

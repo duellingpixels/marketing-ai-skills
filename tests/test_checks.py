@@ -138,3 +138,9 @@ class CheckTests(unittest.TestCase):
     def test_backorder_needs_fulfilment_review(self):
         self.products['A']=Product('A','Tea',D('20'),True,30,None,True)
         self.assertIn('backorder_review',self.codes(self.run_audit()))
+
+    def test_report_records_cost_inputs_for_auditable_margin(self):
+        product=self.run_audit()['products'][0]
+        self.assertEqual(product['unit_cost'],'10.00')
+        self.assertEqual(product['other_unit_cost'],'2.00')
+        self.assertTrue(product['cost_basis_confirmed'])

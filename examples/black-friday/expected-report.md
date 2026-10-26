@@ -18,12 +18,22 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 ## Promoted products
 
-| Product name | SKU | Planned price | Available units | Contribution per unit | Contribution % |
-|---|---|---:|---:|---:|---:|
-| Tea 250g | TEA-250 | 15.00 | 8 | 3.00 | 20.00 |
-| Ceramic cup blue | CUP-BLU | 20.00 | 0 | -1.00 | -5.00 |
-| Ceramic cup red | CUP-RED | 25.00 | 40 | 10.00 | 40.00 |
-| Name unavailable | BUNDLE-MISSING | 35.00 | Unverified | Unverified | Unverified |
+All prices and costs are per unit in AUD.
+
+**Unit Margin = planned selling price − unit cost − other unit costs.**
+
+**Value = Unit Margin ÷ planned selling price × 100.** This column shows the margin as a percentage of the selling price.
+
+Unit cost is the cost of the product. Other unit costs are the additional selling costs you supplied, such as payment fees or packaging. Unit Margin is what remains after those listed costs; business overheads and any costs you have not supplied still need covering.
+
+Not supplied means a cost is missing. Not calculated means costs are missing or their currency and tax basis have not been confirmed comparable. Value is also not calculated when the selling price is zero. A known zero cost is shown as 0.00.
+
+| Product name | SKU | Planned selling price | Unit cost | Other unit costs | Unit Margin | Value | Available units |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Tea 250g | TEA-250 | 15.00 | 10.00 | 2.00 | 3.00 | 20.00% | 8 |
+| Ceramic cup blue | CUP-BLU | 20.00 | 15.00 | 6.00 | -1.00 | -5.00% | 0 |
+| Ceramic cup red | CUP-RED | 25.00 | 12.00 | 3.00 | 10.00 | 40.00% | 40 |
+| Name unavailable | BUNDLE-MISSING | 35.00 | Not supplied | Not supplied | Not calculated | Not calculated | Unverified |
 
 ## Resolve before promotion
 
@@ -99,7 +109,7 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 **Action:** Open the sale URL on mobile, record its final HTTP status, visible price and currency, and test the offer.
 
-### Verify offer contribution — Name unavailable [BUNDLE-MISSING]
+### Verify offer margin — Name unavailable [BUNDLE-MISSING]
 
 **Evidence:** Comparable unit\_cost, other\_unit\_cost and explicit cost\_basis\_confirmed=true are required.
 
@@ -134,6 +144,6 @@ Finding counts are individual checks, not numbers of affected products. Unknown 
 
 - Product export prices are interpreted in the report currency and the store export price basis.
 - Stock and product snapshots can change after export; confirm them again before launch.
-- Contribution uses only supplied comparable unit costs; it is not total business profit.
+- Unit Margin uses only supplied comparable unit costs; it is not total business profit.
 - No network, API, AI or store changes were performed. This is not a checkout test.
 - Campaign dates 2026-11-27 to 2026-11-30; check scheduling in the store timezone.

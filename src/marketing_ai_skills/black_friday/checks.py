@@ -43,6 +43,9 @@ def audit(products, offers, platform, currency, as_of, stock=None, evidence=None
         product = products.get(sku)
         result = dict(sku=sku, name=product.name if product else None,
                       planned_price=amount(offer.planned_price), stock=None,
+                      unit_cost=amount(offer.unit_cost) if offer.unit_cost is not None else None,
+                      other_unit_cost=amount(offer.other_unit_cost) if offer.other_unit_cost is not None else None,
+                      cost_basis_confirmed=offer.cost_basis_confirmed,
                       contribution_per_unit=None, contribution_percent=None)
         results.append(result)
         if product is None:
@@ -102,11 +105,11 @@ def audit(products, offers, platform, currency, as_of, stock=None, evidence=None
                     f'{amount(offer.planned_price)} - {amount(offer.unit_cost)} - {amount(offer.other_unit_cost)} = {amount(contribution)} {currency} per unit.',
                     'Review the discount and costs before launching. This calculation excludes unprovided overhead.')
             elif contribution == 0:
-                add('review','zero_contribution',sku,'Offer leaves no contribution after supplied unit costs',
-                    f'Contribution {amount(contribution)} {currency} per unit.',
+                add('review','zero_contribution',sku,'Offer leaves no margin after supplied unit costs',
+                    f'Unit Margin {amount(contribution)} {currency} per unit.',
                     'Review whether the promotion can cover business overhead or has another stated purpose.')
         else:
-            add('unknown','costs_unknown',sku,'Verify offer contribution',
+            add('unknown','costs_unknown',sku,'Verify offer margin',
                 'Comparable unit_cost, other_unit_cost and explicit cost_basis_confirmed=true are required.',
                 'Supply both costs on the same currency and tax basis as the price; use 0 only for a known zero cost.')
         issue = merchant.get(sku)
@@ -171,5 +174,5 @@ def audit(products, offers, platform, currency, as_of, stock=None, evidence=None
                 sources={}, assumptions=[
                     'Product export prices are interpreted in the report currency and the store export price basis.',
                     'Stock and product snapshots can change after export; confirm them again before launch.',
-                    'Contribution uses only supplied comparable unit costs; it is not total business profit.',
+                    'Unit Margin uses only supplied comparable unit costs; it is not total business profit.',
                     'No network, API, AI or store changes were performed. This is not a checkout test.'])

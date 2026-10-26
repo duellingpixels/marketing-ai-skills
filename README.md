@@ -79,7 +79,7 @@ This is a reusable instruction file and local tool, not a hosted AI agent. The P
 ## Interpretation and limits
 
 - Monetary values support up to two decimal places. All amounts in one run must use the stated currency and comparable tax treatment. Shopify Markets prices, automatic discounts and WooCommerce tax display settings require manual confirmation.
-- Contribution = planned unit price − supplied unit product cost − supplied other unit cost. It is not total business profit. No contribution is calculated without both costs and an explicit confirmation that their basis matches the price.
+- Unit Margin = planned selling price − unit cost − other unit costs. Value = Unit Margin ÷ planned selling price × 100, shown with a % sign. The table shows both cost inputs and defines the calculation. Unit Margin is not total business profit; it is only calculated when both supplied costs have a confirmed matching currency and tax basis.
 - Recorded Analytics purchase events do not prove events are correct or unique. Compare with store orders and separately test checkout.
 - Merchant Center statuses are SKU-matched observations for the destination and market you checked. Map service item IDs to your variant SKUs first; do not guess that they match.
 - The default evidence age limit is seven days; adjust with `--max-evidence-age-days`. Default low-stock threshold is ten units; adjust with `--low-stock`. These are prompts to investigate, not demand predictions.
