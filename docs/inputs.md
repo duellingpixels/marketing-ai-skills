@@ -14,7 +14,7 @@ Files are local UTF-8 comma-separated CSV, or JSON for observations. No network 
 | other_unit_cost | No | Supplied unit selling costs on that same basis. Enter 0 only if known to be zero. |
 | cost_basis_confirmed | No | true only when currency and tax treatment match across price and costs. |
 
-Empty optional cells mean unknown. Unit Margin requires both costs and cost_basis_confirmed=true. Unit Margin = planned selling price − unit cost − other unit costs. Value is that margin divided by planned selling price, expressed as a percentage. The report shows the cost inputs alongside the results. Missing costs show Not supplied; uncalculated margins show Not calculated. Known zero costs show 0.00. These measures exclude costs you have not included and are not total business profit. A positive margin is not a recommendation to spend more.
+Empty optional cells mean unknown. Unit Margin requires both costs and cost_basis_confirmed=true. Unit Margin = planned selling price − unit cost − other unit costs. Unit Margin/Sale Price (%) is that margin divided by planned selling price, expressed as a percentage. The report shows the cost inputs alongside the results. Missing costs show Not supplied; uncalculated margins show Not calculated. Known zero costs show 0.00. These measures exclude costs you have not included and are not total business profit. A positive margin is not a recommendation to spend more.
 
 ## Stock CSV
 
@@ -39,4 +39,4 @@ report.json stores findings with code, priority, sku, title, evidence and action
 
 blocker means known evidence warrants resolving the issue before promotion. review means investigate a risk or difference. unknown means evidence is absent or inadequate; some checks may be inapplicable to a particular campaign. Counts measure findings, not distinct products. There is no blanket ready score.
 
-For compatibility, JSON fields contribution_per_unit and contribution_percent retain their original names. They supply the readable report's Unit Margin and Value columns. Product results now also include unit_cost, other_unit_cost and cost_basis_confirmed so the inputs can be checked.
+For compatibility, JSON fields contribution_per_unit and contribution_percent retain their original names. They supply the readable report's Unit Margin and Unit Margin/Sale Price (%) columns. Product results now also include unit_cost, other_unit_cost and cost_basis_confirmed so the inputs can be checked.

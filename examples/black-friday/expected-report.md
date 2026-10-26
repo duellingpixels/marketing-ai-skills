@@ -22,13 +22,13 @@ All prices and costs are per unit in AUD.
 
 **Unit Margin = planned selling price − unit cost − other unit costs.**
 
-**Value = Unit Margin ÷ planned selling price × 100.** This column shows the margin as a percentage of the selling price.
+**Unit Margin/Sale Price (%) = Unit Margin ÷ planned selling price × 100.** This column shows the margin as a percentage of the selling price.
 
 Unit cost is the cost of the product. Other unit costs are the additional selling costs you supplied, such as payment fees or packaging. Unit Margin is what remains after those listed costs; business overheads and any costs you have not supplied still need covering.
 
-Not supplied means a cost is missing. Not calculated means costs are missing or their currency and tax basis have not been confirmed comparable. Value is also not calculated when the selling price is zero. A known zero cost is shown as 0.00.
+Not supplied means a cost is missing. Not calculated means costs are missing or their currency and tax basis have not been confirmed comparable. Unit Margin/Sale Price (%) is also not calculated when the selling price is zero. A known zero cost is shown as 0.00.
 
-| Product name | SKU | Planned selling price | Unit cost | Other unit costs | Unit Margin | Value | Available units |
+| Product name | SKU | Planned selling price | Unit cost | Other unit costs | Unit Margin | Unit Margin/Sale Price (%) | Available units |
 |---|---|---:|---:|---:|---:|---:|---:|
 | Tea 250g | TEA-250 | 15.00 | 10.00 | 2.00 | 3.00 | 20.00% | 8 |
 | Ceramic cup blue | CUP-BLU | 20.00 | 15.00 | 6.00 | -1.00 | -5.00% | 0 |

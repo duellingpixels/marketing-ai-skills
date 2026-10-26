@@ -31,3 +31,7 @@ The report now displays product name plus SKU in the product table and product-s
 ## Cost visibility and margin labels — 26 October 2026
 
 The table shows Unit Margin and Value, with unit cost and other unit costs alongside the selling price. Value is formatted with a % sign. Definitions explain the calculation and excluded costs. Four added tests cover cost inputs, labels and definitions, missing versus known-zero costs, and a zero selling price. All 63 tests pass locally. Both platform examples were regenerated successfully.
+
+## Percentage label — 26 October 2026
+
+Renamed Value to Unit Margin/Sale Price (%) in the report, its definition and current usage guides at the user's request. The full 63-test suite passes after updating the existing report assertion.

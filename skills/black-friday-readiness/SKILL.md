@@ -19,7 +19,7 @@ Merchant Center, Analytics and page inputs are user-recorded evidence, not live 
 
 ## Explain the result
 
-Read report.json and report.md. Lead with the most consequential blockers and the retailer's next three actions; show affected SKUs, figures and dates. Distinguish observed issues from unverified checks. Planned price differences before launch can be intentional. Explain Unit Margin using the selling price, unit cost and other supplied unit costs shown in the table. Value is this margin as a percentage of the selling price. It uses only supplied comparable costs; do not call it total profit or promise an uplift.
+Read report.json and report.md. Lead with the most consequential blockers and the retailer's next three actions; show affected SKUs, figures and dates. Distinguish observed issues from unverified checks. Planned price differences before launch can be intentional. Explain Unit Margin using the selling price, unit cost and other supplied unit costs shown in the table. Unit Margin/Sale Price (%) is this margin as a percentage of the selling price. It uses only supplied comparable costs; do not call it total profit or promise an uplift.
 
 Exit 0 means report generation, not store readiness. If a command returns 2, explain and correct the specific input issue without changing the original export. Never claim to have checked live services, made a test purchase, validated tracking or completed a mobile review when only export evidence was analysed.
 
